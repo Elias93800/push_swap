@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:10:59 by emehdaou          #+#    #+#             */
-/*   Updated: 2023/12/05 20:54:12 by emehdaou         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:02:44 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void pa(t_list **headA, t_list  **headB)
 {
     t_list *tmp;
+    if (!*headB)
+        return ;
     tmp = (*headB)->next;
     if (!*headA)
     {
@@ -30,6 +32,8 @@ void pa(t_list **headA, t_list  **headB)
 void pb(t_list **headA, t_list  **headB)
 {
     t_list *tmp;
+    if (!*headA)
+        return ;
     tmp = (*headA)->next;
     if (!*headB)
     {
