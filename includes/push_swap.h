@@ -27,6 +27,7 @@ void	rrb(t_list **headB);
 void	rrr(t_list **headA, t_list **headB);
 int parse(int argc, char **argv, t_list **headA);
 int check_args(char **tab, t_list **headA);
-    
+int	check_doublon(int num, t_list **headA);
+int check_sort(t_list **headA);
 
 #endif

@@ -12,6 +12,24 @@
 
 #include "../includes/push_swap.h"
 
+int check_sort(t_list **headA)
+{
+	t_list *current;
+
+	current = *headA;
+	if (!(*headA))
+		return (0);
+	 while (current->next)
+	 {
+		if (current->content > current->next->content)
+			return (0);
+		current = current->next;
+	 }
+	 return (1);
+}
+
+
+
 void	print_list(t_list *first_node, char c)
 {
 	t_list	*current;
@@ -35,9 +53,10 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!parse(argc, argv, &headA))
 	{
-		printf("ERROR");
+		printf("ERROR\n");
 		return(0);
 	}
+
 	// print_list(headA, 'a');
 	// print_list(headB, 'b');
 	// printf("----------------\n");

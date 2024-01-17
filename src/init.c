@@ -16,7 +16,6 @@ int	parse(int argc, char **argv, t_list **headA)
 {
 	int		i;
 	char	**tab;
-	int		err;
 
 	i = 1;
 	if (argc < 2)
@@ -24,12 +23,8 @@ int	parse(int argc, char **argv, t_list **headA)
 	while (i < argc)
 	{
 		tab = ft_split(argv[i], ' ');
-		err = check_args(tab, headA);
-		if (err)
-		{
-			printf("ERROR NB %i\n", err);
+		if (check_args(tab, headA))
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -40,7 +35,6 @@ int	parse(int argc, char **argv, t_list **headA)
 int	check_args(char **tab, t_list **headA)
 {
 	int		i;
-    int     max = 0;
 	int		j;
 	long	tmp;
 
@@ -58,28 +52,30 @@ int	check_args(char **tab, t_list **headA)
 				return (92110);
 			if ((tmp * ((-(tab[i][0] == '-')) | 1) > 2147483647 || (tmp * (-(tab[i][0] == '-')) | 1) < -2147483648))
 				return (93800);
-            max++;
 		}
+		if (!check_doublon(ft_atoi(tab[i]), headA))
+			return (93200);
 		ft_lstadd_back(headA, ft_lstnew(ft_atoi(tab[i++])));
-        // v
 	}
-    // int *elias = calloc(sizeof(int), max);
-    int *elias = malloc(sizeof(int) * (long)(UINT_MAX));
-    if (!elias)
-        return (213123);
-    t_list *moha = *headA;
-    while (moha)
-    {
-        long int index = moha->content;
-        // printf("%li\n", index + 2147483647);
-        elias[index + 2147483647] = 1;
-        // printf("[%i]", elias[index + 2147483647]);
-        if (elias[index + 2147483647] >= 2)
-            return (moha->content); 
-        moha = moha->next;
-    }
 	return (0);
 }
+
+int	check_doublon(int num, t_list **headA)
+{
+	t_list *current;
+
+	current = *headA;
+	if (!(*headA))
+		return (1);
+	while (current)
+	{
+		if (num == (current)->content)
+			return (0);
+		(current) = (current)->next;
+	}
+	return (1);
+}
+
 
 // int check_max(char tab, int *tmp)
 // {
