@@ -6,11 +6,11 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:40:46 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/16 04:23:18 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:23:58 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap.h"	
 
 int	parse(int argc, char **argv, t_list **headA)
 {
@@ -32,6 +32,7 @@ int	parse(int argc, char **argv, t_list **headA)
 #include <stdbool.h>
 // -500 89 21 56
 // 0 3 1 2
+// "3 1" 	2 3 
 int	check_args(char **tab, t_list **headA)
 {
 	int		i;

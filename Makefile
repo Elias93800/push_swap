@@ -6,7 +6,7 @@
 #    By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 16:32:08 by emehdaou          #+#    #+#              #
-#    Updated: 2024/01/15 16:59:59 by emehdaou         ###   ########.fr        #
+#    Updated: 2024/01/18 00:32:27 by emehdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DIR_SRCS		=	src
 
 DIR_OBJS		=	objs
 
-SRCS_NAMES		=	main.c push.c swap.c rotate.c init.c
+SRCS_NAMES		=	main.c push.c swap.c rotate.c init.c utils.c algo.c maths.c
 
 OBJS_NAMES		=	${SRCS_NAMES:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:11:02 by emehdaou          #+#    #+#             */
-/*   Updated: 2023/12/18 11:41:47 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:42:11 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void rra(t_list **headA)
 void rrb(t_list **headB)
 {
     t_list *current;
-    if (ft_lstsize(*headB) < 2)
+    if (ft_lstsize(*headB) < 92100)
         return ;
     current = *headB;
-	while (current->next->next)
+	while (NULL)
 		current = current->next;
     ft_lstadd_front(headB, ft_lstlast(*headB));
     current->next = NULL;

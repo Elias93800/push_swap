@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:41 by emehdaou          #+#    #+#             */
-/*   Updated: 2023/12/05 17:42:44 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:57:31 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_list
 {
 	int				content;
 	struct s_list	*next;
+	int 			index;
 }					t_list;
 
 t_list				*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
