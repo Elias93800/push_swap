@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:59:53 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/18 00:33:12 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/18 03:12:26 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ t_list *daron(int gamin, t_list **headA)
     return (daron_actuel);
 }
 
-// price(index, sizepile)
-// price(index, sizepile)
 int price(int index, int size)
 {
     int price;
@@ -58,6 +56,5 @@ int price(int index, int size)
         price = index;
     else
         price = -(size - index);
-// printf("GAMIN = %i | price %i\n", index, size);
     return (price);
 }

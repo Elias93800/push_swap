@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:11:05 by emehdaou          #+#    #+#             */
-/*   Updated: 2023/12/05 19:45:37 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/18 03:08:29 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void sa(t_list **head)
     tmp = (*head)->next->next;
     ft_lstadd_front(head, (*head)->next);
     (*head)->next->next = tmp;
+    printf("sa\n");
 }
 
 void sb(t_list **head)
@@ -31,6 +32,7 @@ void sb(t_list **head)
     tmp = (*head)->next->next;
     ft_lstadd_front(head, (*head)->next);
     (*head)->next->next = tmp;
+    printf("sb\n");  
 }
 
 void ss(t_list **headA, t_list **headB)
