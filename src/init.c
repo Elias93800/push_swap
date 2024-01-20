@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:40:46 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/17 19:23:58 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/19 00:14:01 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	parse(int argc, char **argv, t_list **headA)
 		tab = ft_split(argv[i], ' ');
 		if (check_args(tab, headA))
 			return (0);
+		free_tab(tab);
 		i++;
 	}
 	return (1);

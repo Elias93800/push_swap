@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:41 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/17 17:57:31 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/19 00:13:43 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char				*ft_strdup(const char *s1);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				**ft_split(char const *s, char c);
+void				free_tab(char **tab);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 

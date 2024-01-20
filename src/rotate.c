@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:11:02 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/18 03:19:41 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/19 20:18:06 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void ra(t_list **headA, int stop)
 {
-    t_list *tmp;
     if (ft_lstsize(*headA) < 2)
         return ;
-    tmp = (*headA)->next;
-    ft_lstadd_back(headA, *headA);
-    (*headA)->next = NULL;
-    *headA = tmp;
+    t_list *last = ft_lstlast(*headA);
+    last->next = *headA;
+    (*headA) = (*headA)->next;
+    last->next->next = NULL;
     if (!stop)
         printf("ra\n"); 
 }
@@ -42,7 +41,7 @@ void rr(t_list **headA, t_list **headB)
 {
     ra(headA, 1);
     rb(headB, 1);
-    printf("rr");  
+    printf("rr\n");  
 }
 
 void rra(t_list **headA, int stop)

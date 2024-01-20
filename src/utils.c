@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:59:53 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/18 03:12:26 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/19 20:16:35 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,24 @@ int price(int index, int size)
     else
         price = -(size - index);
     return (price);
+}
+
+void	ft_clear(t_list **lst)
+{
+	t_list	*tmp;
+    int size;
+
+    if (!lst)
+        return ;
+    tmp = *lst;
+    size = ft_lstsize(*lst);
+    printf("size = %d\n", size);
+	while (size > 0)
+	{
+        printf("je free %i\n", tmp->content);
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
+        size--;
+	}
 }
