@@ -47,67 +47,48 @@ t_list *last_sort(t_list *headA, t_list *headB)
 {
 	t_list	*min;
 	
-	// t_list *tmp = headA;
 	ft_index(&headA);
 	ft_index(&headB);
-	printf("debut de last sort\n");
-	print_both(headA, headB);
 	min = ft_min(&headA);
-	// printf("MIN IS %i [%i]\n", min->content, min->index);
 	if (min->index > ft_lstsize(headA) / 2)
 	{
-		while (headA->content != -23)
-		{
-			ra(&headA, 0);
-			// printf("je cmp %i et %i\n", headA->content, -23);
-		}
-	}
-	// printf("LA TETE DE HEADA = %i\n", headA->content);
-	else
 		while (headA->content != min->content)
 			ra(&headA, 0);
+	}
+	else
+		while (headA->content != min->content)
+			rra(&headA, 0);
 	ft_index(&headA);
 	ft_index(&headB);
-	printf("FIN DE LAST SORT heada = %d\n", headA->content);
-	print_both(headA, headB);
 	return (headA);
 }
 
-void	algo_all(t_list *headA, t_list *headB)
+void	algo_all(t_list **headA, t_list **headB)
 {
 	t_list	*tmp;
 	t_price	price;
 	t_price	best;
 
-	while (ft_lstsize(headA) > 3)
-		pb(&headA, &headB);
-	(ft_index(&headA), ft_index(&headB));
-	print_both(headA, headB);
-	if (ft_lstsize(headA) == 3)
-		sort_3(&headA);
-	print_both(headA, headB);
-	while (ft_lstsize(headB))
+	while (ft_lstsize(*headA) > 3)
+		pb(headA, headB);
+	(ft_index(headA), ft_index(headB));
+	if (ft_lstsize(*headA) == 3)
+		sort_3(headA);
+	while (ft_lstsize(*headB))
 	{
-		ft_index(&headA);
-		ft_index(&headB);
-		tmp = headB;
+		(ft_index(headA), ft_index(headB));
+		tmp = *headB;
 		best.total = INT_MAX;
 		while (tmp)
 		{
-			price = calc_price(tmp, headA, headB);
+			price = calc_price(tmp, *headA, *headB);
 			if (price.total < best.total)
 				best = price;
 			tmp = tmp->next;
 		}
-		print_both(headA, headB);
-		move(best, &headA, &headB);
+		move(best, headA, headB);
 	}
-	headA = last_sort(headA, headB);
-	printf("JUSTE APRES LAST SORT headA = %d\n", headA->content);
-	print_both(headA, headB);
-	ft_index(&headA);
-	ft_index(&headB);
-	print_both(headA, headB);
+	*headA = last_sort(*headA, *headB);
 }
 
 void	move(t_price best, t_list **headA, t_list **headB)

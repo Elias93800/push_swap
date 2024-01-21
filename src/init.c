@@ -31,9 +31,6 @@ int	parse(int argc, char **argv, t_list **headA)
 	return (1);
 }
 #include <stdbool.h>
-// -500 89 21 56
-// 0 3 1 2
-// "3 1" 	2 3 
 int	check_args(char **tab, t_list **headA)
 {
 	int		i;
@@ -46,17 +43,17 @@ int	check_args(char **tab, t_list **headA)
 		tmp = 0;
 		j = (tab[i][0] == '-');
 		if (!tab[i][j])
-			return (92600);
+			return (free_tab(tab), 92600);
 		while (tab[i][j])
 		{
 			tmp = (tmp * 10 + tab[i][j] - '0');
 			if (!ft_isdigit(tab[i][j++]))
-				return (92110);
+				return (free_tab(tab), 92110);
 			if ((tmp * ((-(tab[i][0] == '-')) | 1) > 2147483647 || (tmp * (-(tab[i][0] == '-')) | 1) < -2147483648))
-				return (93800);
+				return (free_tab(tab), 93800);
 		}
 		if (!check_doublon(ft_atoi(tab[i]), headA))
-			return (93200);
+			return (free_tab(tab), 1);
 		ft_lstadd_back(headA, ft_lstnew(ft_atoi(tab[i++])));
 	}
 	return (0);

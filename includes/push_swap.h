@@ -43,7 +43,7 @@ t_list	*daron(int gamin, t_list **headA);
 int		sort_3(t_list **headA);
 int		price(int index, int size);
 int		abs(int nb);
-void	algo_all(t_list *headA, t_list *headB);
+void	algo_all(t_list **headA, t_list **headB);
 void	move(t_price best, t_list **headA, t_list **headB);
 void	print_both(t_list *a, t_list *b);
 int		check_sort(t_list **headA);

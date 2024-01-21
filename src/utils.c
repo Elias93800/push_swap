@@ -68,10 +68,8 @@ void	ft_clear(t_list **lst)
         return ;
     tmp = *lst;
     size = ft_lstsize(*lst);
-    printf("size = %d\n", size);
 	while (size > 0)
 	{
-        printf("je free %i\n", tmp->content);
 		tmp = (*lst)->next;
 		free(*lst);
 		*lst = tmp;

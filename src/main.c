@@ -79,27 +79,8 @@ int	main(int argc, char **argv)
 		ft_clear(&headA);
 		return (0);
 	}
-	// if (check_sort(&headA))
-		// return (1);
-	algo_all(headA, headB);
-	// pb(&headA, &headB);
-	// pb(&headA, &headB);
-	// rra(&headA, 0);
-	// rra(&headA, 0);
-	// rra(&headA, 0);
-	// rra(&headA, 0);
-	// rra(&headA, 0);
-	// sa(&headA);
-	// pa(&headA, &headB);
-	// pa(&headA, &headB);
-	// ra(&headA, 0);
-	// ra(&headA, 0);
-	// print_both(headA, headB);
-	// last_sort(headA, headB);
-	// print_both(headA, headB);
-	// ft_clear(&headA);
-	print_both(headA, headB);
+	algo_all(&headA, &headB);
 	ft_clear(&headA);
 	ft_clear(&headB);
-	// ft_clear(&headB);
+
 }
