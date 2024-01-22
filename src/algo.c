@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:06:01 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/19 22:00:25 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/22 05:10:00 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,21 @@ t_price	calc_price(t_list *tmp, t_list *headA, t_list *headB)
 	return (prix);
 }
 
-t_list *last_sort(t_list *headA, t_list *headB)
+t_list	*last_sort(t_list *headA, t_list *headB)
 {
 	t_list	*min;
-	
+
 	ft_index(&headA);
 	ft_index(&headB);
 	min = ft_min(&headA);
 	if (min->index > ft_lstsize(headA) / 2)
 	{
 		while (headA->content != min->content)
-			ra(&headA, 0);
+			rra(&headA, 0);
 	}
 	else
 		while (headA->content != min->content)
-			rra(&headA, 0);
+			ra(&headA, 0);
 	ft_index(&headA);
 	ft_index(&headB);
 	return (headA);
@@ -69,8 +69,6 @@ void	algo_all(t_list **headA, t_list **headB)
 	t_price	price;
 	t_price	best;
 
-	while (ft_lstsize(*headA) > 3)
-		pb(headA, headB);
 	(ft_index(headA), ft_index(headB));
 	if (ft_lstsize(*headA) == 3)
 		sort_3(headA);

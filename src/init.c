@@ -6,11 +6,25 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:40:46 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/19 00:14:01 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/22 06:36:13 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"	
+#include "../includes/push_swap.h"
+
+int	only_space(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	parse(int argc, char **argv, t_list **headA)
 {
@@ -22,15 +36,18 @@ int	parse(int argc, char **argv, t_list **headA)
 		return (0);
 	while (i < argc)
 	{
+		if (!argv[i][0])
+			return (0);
+		if (only_space(argv[i]))
+			return (0);
 		tab = ft_split(argv[i], ' ');
 		if (check_args(tab, headA))
 			return (0);
-		free_tab(tab);
 		i++;
 	}
 	return (1);
 }
-#include <stdbool.h>
+
 int	check_args(char **tab, t_list **headA)
 {
 	int		i;
@@ -49,19 +66,20 @@ int	check_args(char **tab, t_list **headA)
 			tmp = (tmp * 10 + tab[i][j] - '0');
 			if (!ft_isdigit(tab[i][j++]))
 				return (free_tab(tab), 92110);
-			if ((tmp * ((-(tab[i][0] == '-')) | 1) > 2147483647 || (tmp * (-(tab[i][0] == '-')) | 1) < -2147483648))
+			if ((tmp * ((-(tab[i][0] == '-')) | 1) > 2147483647 || (tmp
+					* (-(tab[i][0] == '-')) | 1) < -2147483648))
 				return (free_tab(tab), 93800);
 		}
 		if (!check_doublon(ft_atoi(tab[i]), headA))
 			return (free_tab(tab), 1);
 		ft_lstadd_back(headA, ft_lstnew(ft_atoi(tab[i++])));
 	}
-	return (0);
+	return (free_tab(tab), 0);
 }
 
 int	check_doublon(int num, t_list **headA)
 {
-	t_list *current;
+	t_list	*current;
 
 	current = *headA;
 	if (!(*headA))
@@ -74,30 +92,3 @@ int	check_doublon(int num, t_list **headA)
 	}
 	return (1);
 }
-
-
-// int check_max(char tab, int *tmp)
-// {
-//     (*tmp) *= 10;
-//     (*tmp) += tab - '0';
-//     printf(">>>>%li\n", (*tmp));
-//     if ((*tmp) > 2147483647 || (*tmp) < -2147483648)
-//         return (5);
-
-// }
-
-// argv[1] = 1
-// argv[2] = 0
-// argv[3] = " 35 4 -5 j !"
-// argv[4] = 9
-
-// ""1""0""35""
-
-// argc = 5;
-// i = 1;
-// while (i < argc)
-//     char **tab = ft_split(argv[i]);
-//     while (tab[j])
-//         if (is_digit(tab[j]))
-//         num = ft_atoi(tab[j]);
-//     free tab
