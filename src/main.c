@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:18:25 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 12:34:21 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 23:44:01 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,7 @@
 // 	fprintf(stderr, "     \033[7;32mA\033[0m\033[7;36m\t\t\tB\033[0m\n\n");
 // }
 
-int	check_sort(t_list **headA)
-{
-	t_list	*current;
 
-	current = *headA;
-	if (!(*headA))
-		return (0);
-	while (current->next)
-	{
-		if (current->content > current->next->content)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
 
 int	main(int argc, char **argv)
 {

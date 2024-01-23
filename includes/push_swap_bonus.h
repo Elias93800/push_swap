@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:03:32 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 23:41:12 by emehdaou         ###   ########.fr       */
+/*   Created: 2024/01/23 22:02:29 by emehdaou          #+#    #+#             */
+/*   Updated: 2024/01/23 23:42:39 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include "../libft/libft.h"
-
-typedef struct t_price
-{
-	int	total;
-	int	price_a;
-	int	price_b;
-}		t_price;
 
 void	sa(t_list **head);
 void	sb(t_list **head);
@@ -32,25 +25,13 @@ void	rr(t_list **headA, t_list **headB);
 void	rra(t_list **headA, int stop);
 void	rrb(t_list **headB, int stop);
 void	rrr(t_list **headA, t_list **headB);
-void	ss(t_list **headA, t_list **headB);
 int		parse(int argc, char **argv, t_list **headA);
 int		check_args(char **tab, t_list **headA);
 int		check_doublon(int num, t_list **headA);
-void	median(t_list **headA, t_list **headB);
-void	sort_5(t_list **headA, t_list **headB);
-void	sort_2(t_list **headA);
-t_list	*last_sort(t_list *headA, t_list *headB);
 void	ft_index(t_list **head);
-t_list	*ft_min(t_list **head);
-t_list	*ft_max(t_list **head);
-t_list	*daron(int gamin, t_list **headA);
-int		sort_3(t_list **headA);
-int		price(int index, int size);
-int		abs(int nb);
-void	algo_all(t_list **headA, t_list **headB);
-void	move(t_price best, t_list **headA, t_list **headB);
 void	print_both(t_list *a, t_list *b);
 int		check_sort(t_list **headA);
+void	ss(t_list **headA, t_list **headB);
 void	ft_clear(t_list **lst);
 
 #endif

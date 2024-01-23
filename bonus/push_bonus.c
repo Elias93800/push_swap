@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:11:05 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 23:40:11 by emehdaou         ###   ########.fr       */
+/*   Created: 2023/12/05 16:10:59 by emehdaou          #+#    #+#             */
+/*   Updated: 2024/01/23 22:04:24 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sa(t_list **head)
+void	pa(t_list **headA, t_list **headB)
 {
 	t_list	*tmp;
 
-	if (ft_lstsize(*head) < 2)
+	if (!*headB)
 		return ;
-	tmp = (*head)->next->next;
-	ft_lstadd_front(head, (*head)->next);
-	(*head)->next->next = tmp;
-	ft_printf("sa\n");
+	tmp = (*headB)->next;
+	(*headB)->next = *headA;
+	*headA = *headB;
+	*headB = tmp;
 }
 
-void	sb(t_list **head)
+void	pb(t_list **headA, t_list **headB)
 {
 	t_list	*tmp;
 
-	if (ft_lstsize(*head) < 2)
+	if (!*headA)
 		return ;
-	tmp = (*head)->next->next;
-	ft_lstadd_front(head, (*head)->next);
-	(*head)->next->next = tmp;
-	ft_printf("sb\n");
+	tmp = (*headA)->next;
+	(*headA)->next = *headB;
+	*headB = *headA;
+	*headA = tmp;
 }
 
-void	ss(t_list **headA, t_list **headB)
+void	rrr(t_list **headA, t_list **headB)
 {
-	sa(headA);
-	sb(headB);
+	rra(headA, 1);
+	rrb(headB, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:06:01 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/22 05:10:00 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:50:50 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,17 @@ t_price	calc_price(t_list *tmp, t_list *headA, t_list *headB)
 
 	prix.price_a = price(daron(tmp->content, &headA)->index, ft_lstsize(headA));
 	prix.price_b = price(tmp->index, ft_lstsize(headB));
-	prix.total = abs(prix.price_a) + abs(prix.price_b);
+	int a = abs(prix.price_a);
+	int b = abs(prix.price_b);
+	if ((prix.price_a < 0 && prix.price_b < 0) || (prix.price_a > 0 && prix.price_b > 0))
+	{
+		if (a >= b)
+			prix.total = a;
+		else
+			prix.total = b;
+	}
+	else
+		prix.total = a + b;
 	return (prix);
 }
 
