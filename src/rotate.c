@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:11:02 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/22 05:22:45 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:29:30 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ra(t_list **headA, int stop)
 	(*headA) = (*headA)->next;
 	last->next->next = NULL;
 	if (!stop)
-		printf("ra\n");
+		ft_printf("ra\n");
 }
 
 void	rb(t_list **headB, int stop)
@@ -37,14 +37,14 @@ void	rb(t_list **headB, int stop)
 	(*headB)->next = NULL;
 	*headB = tmp;
 	if (!stop)
-		printf("rb\n");
+		ft_printf("rb\n");
 }
 
 void	rr(t_list **headA, t_list **headB)
 {
 	ra(headA, 1);
 	rb(headB, 1);
-	printf("rr\n");
+	ft_printf("rr\n");
 }
 
 void	rra(t_list **headA, int stop)
@@ -59,7 +59,7 @@ void	rra(t_list **headA, int stop)
 	ft_lstadd_front(headA, ft_lstlast(*headA));
 	current->next = NULL;
 	if (!stop)
-		printf("rra\n");
+		ft_printf("rra\n");
 }
 
 void	rrb(t_list **headB, int stop)
@@ -74,5 +74,5 @@ void	rrb(t_list **headB, int stop)
 	ft_lstadd_front(headB, ft_lstlast(*headB));
 	current->next = NULL;
 	if (!stop)
-		printf("rrb\n");
+		ft_printf("rrb\n");
 }

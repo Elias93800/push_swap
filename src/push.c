@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:10:59 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/22 05:22:54 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:29:06 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	pa(t_list **headA, t_list **headB)
 	(*headB)->next = *headA;
 	*headA = *headB;
 	*headB = tmp;
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	pb(t_list **headA, t_list **headB)
@@ -35,12 +35,12 @@ void	pb(t_list **headA, t_list **headB)
 	(*headA)->next = *headB;
 	*headB = *headA;
 	*headA = tmp;
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
 void	rrr(t_list **headA, t_list **headB)
 {
-	printf("rrr\n");
+	ft_printf("rrr\n");
 	rra(headA, 1);
 	rrb(headB, 1);
 }

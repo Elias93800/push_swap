@@ -5,6 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/01/24 20:15:20 by emehdaou          #+#    #+#              #
+#    Updated: 2024/01/23 12:36:35 by emehdaou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 20:15:20 by apuchill          #+#    #+#              #
 #    Updated: 2023/11/15 17:10:34 by emehdaou         ###   ########.fr        #
 #                                                                              #
@@ -46,6 +58,10 @@ ft_memmove.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_calloc.c \
+ft_printf.c \
+ft_printf_utils.c \
+get_next_line.c \
+get_next_line_utils.c \
 
 BONUS		=	ft_lstnew.c \
 ft_lstadd_front.c \
@@ -89,3 +105,5 @@ re:			fclean all
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
+
+.PHONY : re clean fclean all 

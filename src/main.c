@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:18:25 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/22 06:33:28 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:34:21 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 	headb = NULL;
 	if (!parse(argc, argv, &heada))
 	{
-		printf("ERROR\n");
+		ft_printf("ERROR\n");
 		ft_clear(&heada);
 		return (0);
 	}

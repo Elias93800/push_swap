@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:35:41 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/22 05:22:07 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:25:58 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,41 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define HEXBASE_MIN "0123456789abcdef"
+# define HEXBASE_MAJ "0123456789ABCDEF"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+typedef struct s_list
+{
+	int				content;
+	struct s_list	*next;
+	int				index;
+}					t_list;
+
+typedef struct s_list_gnl
+{
+	char			*content;
+	struct s_list_gnl		*next;
+}					t_list_gnl;
+
+
+char				*get_next_line(int fd);
+void				ft_lstadd_back_gnl(t_list_gnl *head, char *content);
+t_list_gnl				*ft_lstnew_gnl(char *content);
+t_list_gnl				*ft_lstlast_gnl(t_list_gnl *lst);
+int					get_size(t_list_gnl *head);
+
+int					ft_printf(const char *str, ...);
+size_t				ft_strlen(const char *str);
+void				ft_putstr(char const *s, int fd, int *cnt);
+void				ft_putchar(char c, int fd, int *cnt);
+void				print_arg(char c, va_list args, int *cnt, long *j);
+void				ft_putnbr_hex(long unsigned int nbr, char *base, int *cnt);
+void				ft_putnbr(int nbr, int *cnt);
+void				ft_putnbr_u(unsigned int nbr, int *cnt);
 
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -61,12 +96,6 @@ void				ft_putstr_fd(char const *s, int fd);
 
 // bonus part
 
-typedef struct s_list
-{
-	int				content;
-	struct s_list	*next;
-	int				index;
-}					t_list;
 
 t_list				*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
 void				ft_lstiter(t_list *lst, void (*f)(int));
