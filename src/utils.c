@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:59:53 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 23:44:15 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:13:07 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ft_clear(t_list **lst)
 		size--;
 	}
 }
+
 int	check_sort(t_list **headA)
 {
 	t_list	*current;

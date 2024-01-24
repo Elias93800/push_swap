@@ -6,7 +6,7 @@
 #    By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 16:32:08 by emehdaou          #+#    #+#              #
-#    Updated: 2024/01/23 23:45:55 by emehdaou         ###   ########.fr        #
+#    Updated: 2024/01/24 09:53:09 by emehdaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ DIR_BONUS		=	bonus
 
 SRCS_NAMES		=	main.c push.c swap.c rotate.c init.c utils.c algo.c maths.c median.c
 
-SRCS_NAMES_B	=	checker.c push_bonus.c rotate_bonus.c swap_bonus.c init.c utils.c maths.c
+SRCS_NAMES_B	=	checker.c push_bonus.c rotate_bonus.c swap_bonus.c init_bonus.c utils_bonus.c maths_bonus.c
 
 OBJS_NAMES		=	${SRCS_NAMES:.c=.o}
 

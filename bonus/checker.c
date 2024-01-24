@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 19:20:20 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/24 00:21:22 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:42:25 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	parse_move(char *str, t_list **headA, t_list **headB)
 		return (rrb(headA, 0), 0);
 	else if (ft_strcmp(str, "rrr\n") == 0)
 		return (rrr(headA, headB), 0);
-    return (1);
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	heada = NULL;
 	headb = NULL;
 	if (argc < 2)
-		return (ft_printf("ERROR"));
+		return (ft_printf("ERROR\n"));
 	if (!parse(argc, argv, &heada))
 		return (ft_clear(&heada), ft_clear(&headb), ft_printf("ERROR\n"));
 	while (938)
@@ -57,15 +57,12 @@ int	main(int argc, char **argv)
 		if (!str)
 			break ;
 		if (parse_move(str, &heada, &headb))
-            break;
-        free(str);
+			return (ft_clear(&heada), ft_clear(&headb), ft_printf("ERROR\n"));
+		free(str);
 	}
-	get_next_line(88274, 1);
-    if (ft_lstsize(headb) != 0)
-        return (ft_clear(&heada), ft_clear(&headb), ft_printf("ERROR 932\n"));
-    if (check_sort(&heada))
-        return(ft_clear(&heada), ft_clear(&headb), ft_printf("OK\n"));
-    else
-        return (ft_clear(&heada), ft_clear(&headb), ft_printf("ERROR 92110\n"));
+	get_next_line(93800, 1);
+	if (check_sort(&heada) && ft_lstsize(headb) == 0)
+		return (ft_clear(&heada), ft_clear(&headb), ft_printf("OK\n"));
+	else
+		return (ft_clear(&heada), ft_clear(&headb), ft_printf("ERROR\n"));
 }
-

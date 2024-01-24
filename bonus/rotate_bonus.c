@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:11:02 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 22:06:15 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:12:53 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ra(t_list **headA, int stop)
 	(void)stop;
 }
 
-
 void	rb(t_list **headB, int stop)
 {
 	t_list	*tmp;
@@ -39,13 +38,11 @@ void	rb(t_list **headB, int stop)
 	(void)stop;
 }
 
-
 void	rr(t_list **headA, t_list **headB)
 {
 	ra(headA, 1);
 	rb(headB, 1);
 }
-
 
 void	rra(t_list **headA, int stop)
 {
@@ -61,7 +58,6 @@ void	rra(t_list **headA, int stop)
 	(void)stop;
 }
 
-
 void	rrb(t_list **headB, int stop)
 {
 	t_list	*current;
@@ -75,4 +71,3 @@ void	rrb(t_list **headB, int stop)
 	current->next = NULL;
 	(void)stop;
 }
-

@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:58:44 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/24 00:22:24 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/24 09:51:34 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_init(t_list_gnl *head, int fd)
 		if (bytes_read <= 0)
 			return (free(buffer), bytes_read);
 		buffer[bytes_read] = '\0';
-		ft_lstadd_back_gnl	(head, buffer);
+		ft_lstadd_back_gnl(head, buffer);
 		lst = lst->next;
 	}
 	return (1);
@@ -111,7 +111,7 @@ char	*get_next_line(int fd, int moha)
 	char				*res;
 	int					byte_read;
 	t_list_gnl			*t;
-	
+
 	if (fd == -1 || moha)
 		return (res = NULL, free(res), NULL);
 	if (!h)

@@ -6,7 +6,7 @@
 /*   By: emehdaou <emehdaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:06:01 by emehdaou          #+#    #+#             */
-/*   Updated: 2024/01/23 16:50:50 by emehdaou         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:10:00 by emehdaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,15 @@ int	sort_3(t_list **headA)
 t_price	calc_price(t_list *tmp, t_list *headA, t_list *headB)
 {
 	t_price	prix;
+	int		a;
+	int		b;
 
 	prix.price_a = price(daron(tmp->content, &headA)->index, ft_lstsize(headA));
 	prix.price_b = price(tmp->index, ft_lstsize(headB));
-	int a = abs(prix.price_a);
-	int b = abs(prix.price_b);
-	if ((prix.price_a < 0 && prix.price_b < 0) || (prix.price_a > 0 && prix.price_b > 0))
+	a = abs(prix.price_a);
+	b = abs(prix.price_b);
+	if ((prix.price_a < 0 && prix.price_b < 0) || (prix.price_a > 0
+			&& prix.price_b > 0))
 	{
 		if (a >= b)
 			prix.total = a;
@@ -80,6 +83,8 @@ void	algo_all(t_list **headA, t_list **headB)
 	t_price	best;
 
 	(ft_index(headA), ft_index(headB));
+	while (ft_lstsize(*headA) > 3)
+		pb(headA, headB);
 	if (ft_lstsize(*headA) == 3)
 		sort_3(headA);
 	while (ft_lstsize(*headB))
